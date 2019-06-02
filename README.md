@@ -10,3 +10,8 @@ docker rm -f mynginx
 docker run -d --rm --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx nginx
 docker exec -it mynginx bash
 ``` 
+
+## 设置根目录
+```bash
+docker run -d --rm --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www/example.com:/var/www/example.com   nginx
+```
