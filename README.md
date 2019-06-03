@@ -15,3 +15,11 @@ docker exec -it mynginx bash
 ```bash
 docker run -d --rm --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www/example.com:/var/www/example.com   nginx
 ```
+
+## 服务IPv4和IPv6
+## 压缩静态内容
+## 最终版
+```bash
+docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www/example.com:/var/www/example.com -p 8081:80  nginx
+curl -H 'host:www.example' localhost:8081
+```
