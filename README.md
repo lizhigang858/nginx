@@ -44,3 +44,18 @@ find /var/www/example.com/cache/ -type f -delete
 ```
 
 ## 第二章最终版
+
+# SSL TSL
+## 生成自签名证书
+这个是一般方法
+```bash
+su - root
+mkdir /root/certs && cd /root/certs
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out MyCertificate.crt -keyout MyKey.key
+chmod 400 root/certs/MyKey.key
+```
+为example生成证书
+```bash
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out example.com.crt -keyout example.com.key
+chmod 400 example.com.key
+```
