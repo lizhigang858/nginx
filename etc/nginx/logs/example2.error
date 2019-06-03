@@ -1,0 +1,4 @@
+2019/06/03 02:01:52 [error] 7#7: *1 "/var/www/example2.com/index.html" is not found (2: No such file or directory), client: 172.17.0.1, server: example2.org, request: "GET / HTTP/1.1", host: "www.example2.org"
+2019/06/03 02:02:34 [error] 7#7: *2 "/var/www/example2.com/index.html" is not found (2: No such file or directory), client: 172.17.0.1, server: example2.org, request: "GET / HTTP/1.1", host: "www.example2.org"
+2019/06/03 02:02:36 [error] 7#7: *3 "/var/www/example2.com/index.html" is not found (2: No such file or directory), client: 172.17.0.1, server: example2.org, request: "GET / HTTP/1.1", host: "www.example2.org"
+2019/06/03 02:04:20 [error] 7#7: *7 "/var/www/example2.com/index.html" is not found (2: No such file or directory), client: 172.17.0.1, server: example2.org, request: "GET / HTTP/1.1", host: "www.example2.org"

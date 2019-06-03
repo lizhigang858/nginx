@@ -23,3 +23,16 @@ docker run -d --rm --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc
 docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www/example.com:/var/www/example.com -p 8081:80  nginx
 curl -H 'host:www.example' localhost:8081
 ```
+
+# 第二章 一点点高级配置
+备份
+```bash
+cp etc/nginx/nginx.conf etc/nginx/nginx.conf.backup-pt2
+```
+
+## 多个站点
+每个站点是一个server，应该放在自己的配置文件中，如果要禁用某个站点，在文件后面加.disabled就可以
+```bash
+docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www:/var/www -p 8081:80  nginx
+curl -H 'host:www.example2.org' localhost:8081
+```
