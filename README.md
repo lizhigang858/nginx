@@ -59,3 +59,4 @@ chmod 400 root/certs/MyKey.key
 openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out example.com.crt -keyout example.com.key
 chmod 400 example.com.key
 ```
+## 全局配置ssl
