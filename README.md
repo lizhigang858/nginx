@@ -60,3 +60,9 @@ openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out example.co
 chmod 400 example.com.key
 ```
 ## 全局配置ssl
+
+## 一个站点配置
+```
+docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www:/var/www -v /Users/lizhigang/IdeaProjects/lzg/nginx/root/certs:/root/certs  -p 8081:80 -p 443:443  nginx
+curl -k  -H 'host:www.example.com' https://localhost
+```
