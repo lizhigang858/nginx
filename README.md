@@ -66,3 +66,22 @@ chmod 400 example.com.key
 docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www:/var/www -v /Users/lizhigang/IdeaProjects/lzg/nginx/root/certs:/root/certs  -p 8081:80 -p 443:443  nginx
 curl -k  -H 'host:www.example.com' https://localhost
 ```
+## 多个站点使用同一个配置
+```bash
+curl -k -H 'host:example2.org' https://localhost
+```
+
+## 配置每个站点用不通的证书
+```bash
+mkdir example2.org
+cd example2.org
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out example2.org.crt -keyout example2.org.key
+docker exec mynginx nginx -s reload
+curl -k -H 'host:example2.org' https://localhost
+```
+
+# TLS 最佳实践
+```bash
+cp etc/nginx/nginx.conf etc/nginx/nginx.conf.backup-pt4
+cp -r etc/nginx/conf.d/ etc/nginx/conf.d-backup-pt4
+```
