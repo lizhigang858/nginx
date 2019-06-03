@@ -36,3 +36,11 @@ cp etc/nginx/nginx.conf etc/nginx/nginx.conf.backup-pt2
 docker run -d  --name mynginx -v /Users/lizhigang/IdeaProjects/lzg/nginx/etc/nginx:/etc/nginx -v  /Users/lizhigang/IdeaProjects/lzg/nginx/var/www:/var/www -p 8081:80  nginx
 curl -H 'host:www.example2.org' localhost:8081
 ```
+
+## 缓存
+```bash
+#删除缓存
+find /var/www/example.com/cache/ -type f -delete
+```
+
+## 第二章最终版
